@@ -1,0 +1,16 @@
+.deeply{
+    text-decoration: underline;
+}
+
+.fragile{
+    background: orange;
+}
+
+.shell{
+    color: red;
+    font-weight: bold;
+}
+
+.prince{
+    width: 350px;
+}
