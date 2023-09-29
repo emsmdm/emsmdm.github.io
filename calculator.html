@@ -3,24 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>JavaScript Calculator</title>
+    <style>
+        table{
+            width: 500px;
+            text-align: center;
+        }
+
+        th{
+            background-color: orange;
+        }
+    </style>
 </head>
 <body>
-<script>
-    let x_variable = prompt("Value of x");
-    let operator = prompt("operator");
-    let y_variable = prompt("Value of y");
-    var x = x_variable;
-    var op_symbol = operator;
-    var y = y_variable;
-    document.write("<table>");
-
-    let calc_loop = confirm("Continue");
-    if(calc_loop === true){
-        let x_variable = prompt("Value of x");
-        let operator = prompt("operator");
-        let y_variable = prompt("Value of y");
-        let calc_loop = confirm("Continue");
-    }
-</script>
+<script src="calculator.js"></script>
 </body>
 </html>
