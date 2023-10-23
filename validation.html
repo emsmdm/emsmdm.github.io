@@ -15,7 +15,12 @@
         <br>
         Confirm Password:<input type="password" id="cPassword">
         <br>
-        Gender:<input type="radio" id="gender">
+        Gender:<input type="radio" name="gender" value="Male" id="ml">
+        <label for="ml">Male</label>
+        <input type="radio" name="gender" value="Female" id="fl">
+        <label for="fl">Female</label>
+        <input type="radio" name="gender" value="Other" id="or">
+        <label for="or">Other</label>
         <br>
         Age Group:<select size="1" id="age">
             <option value="blank" selected></option>
@@ -35,4 +40,5 @@
         <input type="button" onclick="" value="Submit">
         <input type="reset" onclick="" value="Cancel">
     </form>
+   <script src="validation.js"></script>
 </body>
