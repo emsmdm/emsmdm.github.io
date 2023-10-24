@@ -3,6 +3,7 @@ function submissionCheck(){
         let usernameInput = document.infoForm.username;
         if(usenameInput.value.match(/^[a-z0-9]*$/)){
             true;
+            console.log(1);
         }
     }
 }
