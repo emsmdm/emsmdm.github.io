@@ -2,6 +2,7 @@ function submissionCheck(){
     const form = document.getElementById("fm");
     let username = document.infoForm.username.value;
     let email = document.infoForm.email.value;
+    let phone = document.infoForm.number.value;
     if(username === ""){
         let para = document.createElement("p");
         let userError = document.createTextNode("Please Enter ");
@@ -11,10 +12,9 @@ function submissionCheck(){
         para.appendChild(userError);
         para.appendChild(span);
         form.appendChild(para);
-        return false;
     } else if(username.match(/[a-z0-9]{4,12}/)) {
         console.log("match");
-    } else{
+    } else {
         let para = document.createElement("p");
         let userError = document.createTextNode("Please Enter ");
         let span = document.createElement("span");
@@ -23,7 +23,6 @@ function submissionCheck(){
         para.appendChild(userError);
         para.appendChild(span);
         form.appendChild(para);
-        return false;
     }
     if(email === ""){
         let paraOne = document.createElement("p");
@@ -34,8 +33,38 @@ function submissionCheck(){
         paraOne.appendChild(emailError);
         paraOne.appendChild(span);
         form.appendChild(paraOne);
-        return false;
+        //return false;
     } else if(email.match(/[@](.net|.com|.org|.edu)$/)){
-
+        console.log("ematch");
+    } else{
+        let paraOne = document.createElement("p");
+        let emailError = document.createTextNode("Please Enter ");
+        let span = document.createElement("span");
+        span.style.color = "orange";
+        span.innerText = "a valid email";
+        paraOne.appendChild(emailError);
+        paraOne.appendChild(span);
+        form.appendChild(paraOne);
+    }
+    if(phone === ""){
+        let paraTwo = document.createElement("p");
+        let phoneError = document.createTextNode("Please Enter ");
+        let span = document.createElement("span");
+        span.style.color = "red";
+        span.innerText = "Phone Number";
+        paraTwo.appendChild(phoneError);
+        paraTwo.appendChild(span);
+        form.appendChild(paraTwo);
+    } else if(phone.match(/^[(]([0-9]{3})[)-]([0-9]{3})[-]([0-9]{4})$/)){
+        console.log("phmatch");
+    } else{
+        let paraTwo = document.createElement("p");
+        let phoneError = document.createTextNode("Please Enter ");
+        let span = document.createElement("span");
+        span.style.color = "orange";
+        span.innerText = "a valid phone number";
+        paraTwo.appendChild(phoneError);
+        paraTwo.appendChild(span);
+        form.appendChild(paraTwo);
     }
 }
