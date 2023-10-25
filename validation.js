@@ -5,7 +5,9 @@ function submissionCheck(){
     let phone = document.infoForm.number.value;
     let password = document.infoForm.password.value;
     let confirmPassword = document.infoForm.cPassword.value;
-    let gender = document.infoForm.gender.checked;
+    let male = document.getElementById("ml");
+    let female = document.getElementById("fl");
+    let other = document.getElementById("or");
     let age = document.infoForm.age.value;
     if(username === ""){
         let para = document.createElement("p");
@@ -106,7 +108,7 @@ function submissionCheck(){
         paraFour.appendChild(span);
         form.appendChild(paraFour);
     }
-    if(gender === true){
+    if(male.checked === true || female.checked === true || other.checked === true){
         console.log("gconfirm");
     } else{
         let paraFive = document.createElement("p");
