@@ -3,6 +3,9 @@ function submissionCheck(){
     let username = document.infoForm.username.value;
     let email = document.infoForm.email.value;
     let phone = document.infoForm.number.value;
+    let password = document.infoForm.password.value;
+    let confirmPassword = document.infoForm.cPassword.value;
+    let gender = document.infoForm.gender.value;
     if(username === ""){
         let para = document.createElement("p");
         let userError = document.createTextNode("Please Enter ");
@@ -34,7 +37,7 @@ function submissionCheck(){
         paraOne.appendChild(span);
         form.appendChild(paraOne);
         //return false;
-    } else if(email.match(/[@](.net|.com|.org|.edu)$/)){
+    } else if(email.match(/[A-Za-z0-9]+@[A-Za-z0-9\.]+(\.net|\.com|\.org|\.edu)$/)){
         console.log("ematch");
     } else{
         let paraOne = document.createElement("p");
@@ -55,7 +58,7 @@ function submissionCheck(){
         paraTwo.appendChild(phoneError);
         paraTwo.appendChild(span);
         form.appendChild(paraTwo);
-    } else if(phone.match(/^[(]([0-9]{3})[)-]([0-9]{3})[-]([0-9]{4})$/)){
+    } else if(phone.match(/\((\d{3})\)-(\d{3})-(\d{4})/)){
         console.log("phmatch");
     } else{
         let paraTwo = document.createElement("p");
@@ -66,5 +69,59 @@ function submissionCheck(){
         paraTwo.appendChild(phoneError);
         paraTwo.appendChild(span);
         form.appendChild(paraTwo);
+    }
+    if(password === ""){
+        let paraThree = document.createElement("p");
+        let passwordError = document.createTextNode("Please Enter ");
+        let span = document.createElement("span");
+        span.style.color = "red";
+        span.innerText = "Password";
+        paraThree.appendChild(passwordError);
+        paraThree.appendChild(span);
+        form.appendChild(paraThree);
+    } else if(password.match(/[A-Za-z0-9_]{8,}/)){
+        console.log("pmatch");
+    } else{
+        let paraThree = document.createElement("p");
+        let passwordError = document.createTextNode("Please Enter ");
+        let span = document.createElement("span");
+        span.style.color = "orange";
+        span.innerText = "a valid password";
+        paraThree.appendChild(passwordError);
+        paraThree.appendChild(span);
+        form.appendChild(paraThree);
+    }
+    if(confirmPassword === ""){
+        let paraFour = document.createElement("p");
+        let confirmError = document.createTextNode("Please Confirm ");
+        let span = document.createElement("span");
+        span.style.color = "red";
+        span.innerText = "Password";
+        paraFour.appendChild(confirmError);
+        paraFour.appendChild(span);
+        form.appendChild(paraFour);
+    } else if(confirmPassword === password){
+        console.log("conmatch");
+    } else {
+        let paraFour = document.createElement("p");
+        let confirmError = document.createTextNode("Please Enter ");
+        let span = document.createElement("span");
+        span.style.color = "orange";
+        span.innerText = "a valid confirmation";
+        paraFour.appendChild(confirmError);
+        paraFour.appendChild(span);
+        form.appendChild(paraFour);
+    }
+    if(gender === "Male" || "Female" || "Other"){
+        console.log("gconfirm");
+    } else{
+        let paraFive = document.createElement("p");
+        let genderError = document.createTextNode("Please Enter ");
+        let span = document.createElement("span");
+        span.style.color = "red";
+        span.innerText = "Gender";
+        paraFive.appendChild(genderError);
+        paraFive.appendChild(span);
+        form.appendChild(paraFive);
     }
 }
