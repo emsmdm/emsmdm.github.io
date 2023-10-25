@@ -6,6 +6,7 @@ function submissionCheck(){
     let password = document.infoForm.password.value;
     let confirmPassword = document.infoForm.cPassword.value;
     let gender = document.infoForm.gender.value;
+    let age = document.infoForm.age.value;
     if(username === ""){
         let para = document.createElement("p");
         let userError = document.createTextNode("Please Enter ");
@@ -123,5 +124,17 @@ function submissionCheck(){
         paraFive.appendChild(genderError);
         paraFive.appendChild(span);
         form.appendChild(paraFive);
+    }
+    if(age !== "blank"){
+        console.log("ageconfirm");
+    } else{
+        let paraSix = document.createElement("p");
+        let ageError = document.createTextNode("Please Enter ");
+        let span = document.createElement("span");
+        span.style.color = "red";
+        span.innerText = "Age Group";
+        paraSix.appendChild(ageError);
+        paraSix.appendChild(span);
+        form.appendChild(paraSix);
     }
 }
