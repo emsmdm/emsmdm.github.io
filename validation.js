@@ -5,7 +5,7 @@ function submissionCheck(){
     let phone = document.infoForm.number.value;
     let password = document.infoForm.password.value;
     let confirmPassword = document.infoForm.cPassword.value;
-    let gender = document.infoForm.gender.value;
+    let gender = document.infoForm.gender.checked;
     let age = document.infoForm.age.value;
     if(username === ""){
         let para = document.createElement("p");
@@ -92,15 +92,8 @@ function submissionCheck(){
         paraThree.appendChild(span);
         form.appendChild(paraThree);
     }
-    if(confirmPassword === ""){
-        let paraFour = document.createElement("p");
-        let confirmError = document.createTextNode("Please Confirm ");
-        let span = document.createElement("span");
-        span.style.color = "red";
-        span.innerText = "Password";
-        paraFour.appendChild(confirmError);
-        paraFour.appendChild(span);
-        form.appendChild(paraFour);
+    if(confirmPassword !== password){
+        window.alert("passwords do not match");
     } else if(confirmPassword === password){
         console.log("conmatch");
     } else {
@@ -113,7 +106,7 @@ function submissionCheck(){
         paraFour.appendChild(span);
         form.appendChild(paraFour);
     }
-    if(gender === "Male" || "Female" || "Other"){
+    if(gender === true){
         console.log("gconfirm");
     } else{
         let paraFive = document.createElement("p");
@@ -137,4 +130,5 @@ function submissionCheck(){
         paraSix.appendChild(span);
         form.appendChild(paraSix);
     }
+    console.log(gender);
 }
