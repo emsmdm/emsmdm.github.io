@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>COMP 322 Assignment 5</title>
+    <script>
+        $(document).on('ready', function(){
+            $("#tumblr").on({
+                mouseenter: function () {
+                    $("#in").text("Tumblr");
+                    $("#tumblr").fadeTo("fast", 0.5);
+                },
+                mouseleave: function () {
+                    $("#out").text("Tumblr");
+                    $("#tumblr").fadeTo("fast", 1.0);
+                },
+                dblclick: function () {
+                    window.open("https://www.tumblr.com/");
+                },
+                click: function () {
+                    $("#bigImage").attr("src", $("this").prop("src"));
+                    $("#bigImage").css("display", "block");
+                }
+            });
+            $("#mouse").onmousemove(function (event) {
+                $("#mouse").text(event.pageX + ", " + event.pageY);
+            });
+        });
+    </script>
+</head>
+<body>
+    <span>
+        <img src="img/1200px-Tumblr.svg.png" id="tumblr" alt="Tumblr" style="height: 100px">
+        <img src="img/Instagram-Logo.png" id="insta" alt="Instagram" style="height: 100px">
+        <img src="img/Logo_of_Twitter.svg.png" id="twitter" alt="Twitter" style="height: 100px">
+        <img src="img/Netflix.png" id="netflix" alt="Netflix" style="height: 100px">
+        <img src="img/Red-YouTube-logo.png" id="youtube" alt="Youtube" style="height: 100px">
+        <img src="img/reddit-logo.png" id="reddit" alt="Reddit" style="height: 100px">
+    </span>
+    <p id="in">In: </p>
+    <p id="out">Out: </p>
+    <p id="mouse">Mouse X: ,Y: </p>
+    <img src="" id="bigImage" style="display: none;" alt="">
+</body>

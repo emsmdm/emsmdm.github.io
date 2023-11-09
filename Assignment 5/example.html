@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#tumblr").on({
+                mouseenter: function(){
+                    $("#in").text("In: Tumblr");
+                    $("#tumblr").fadeTo("fast", 0.5);
+                },
+                mouseleave: function(){
+                    $("#out").text("Out: Tumblr");
+                    $("#tumblr").fadeTo("fast", 1.0);
+                },
+                dblclick: function(){
+                    window.open("https://www.tumblr.com/");
+                },
+                click: function () {
+                    $("#bigImage").attr('src',$(this).attr('src'));
+                }
+            });
+            $("#insta").on({
+                mouseenter: function(){
+                    $("#in").text("In: Instagram");
+                    $("#insta").fadeTo("fast", 0.5);
+                },
+                mouseleave: function(){
+                    $("#out").text("Out: Instagram");
+                    $("#insta").fadeTo("fast", 1.0);
+                },
+                dblclick: function(){
+                    window.open("https://www.instagram.com/");
+                },
+                click: function () {
+                    $("#bigImage").attr('src',$(this).attr('src'));
+                }
+            });
+            $("#twitter").on({
+                mouseenter: function(){
+                    $("#in").text("In: Twitter");
+                    $("#twitter").fadeTo("fast", 0.5);
+                },
+                mouseleave: function(){
+                    $("#out").text("Out: Twitter");
+                    $("#twitter").fadeTo("fast", 1.0);
+                },
+                dblclick: function(){
+                    window.open("https://twitter.com/?lang=en");
+                },
+                click: function () {
+                    $("#bigImage").attr('src',$(this).attr('src'));
+                }
+            });
+            $("#netflix").on({
+                mouseenter: function(){
+                    $("#in").text("In: Netflix");
+                    $("#netflix").fadeTo("fast", 0.5);
+                },
+                mouseleave: function(){
+                    $("#out").text("Out: Netflix");
+                    $("#netflix").fadeTo("fast", 1.0);
+                },
+                dblclick: function(){
+                    window.open("https://www.netflix.com/");
+                },
+                click: function () {
+                    $("#bigImage").attr('src',$(this).attr('src'));
+                }
+            });
+            $("#youtube").on({
+                mouseenter: function(){
+                    $("#in").text("In: Youtube");
+                    $("#youtube").fadeTo("fast", 0.5);
+                },
+                mouseleave: function(){
+                    $("#out").text("Out: Youtube");
+                    $("#youtube").fadeTo("fast", 1.0);
+                },
+                dblclick: function(){
+                    window.open("https://www.youtube.com/");
+                },
+                click: function () {
+                    $("#bigImage").attr('src',$(this).attr('src'));
+                }
+            });
+            $("#reddit").on({
+                mouseenter: function(){
+                    $("#in").text("In: Reddit");
+                    $("#reddit").fadeTo("fast", 0.5);
+                },
+                mouseleave: function(){
+                    $("#out").text("Out: Reddit");
+                    $("#reddit").fadeTo("fast", 1.0);
+                },
+                dblclick: function(){
+                    window.open("https://www.reddit.com/?rdt=56778");
+                },
+                click: function () {
+                    $("#bigImage").attr('src',$(this).attr('src'));
+                }
+            });
+            $("#mouse").mousemove(function (event) {
+                $("#mouse").text("Mouse X: " + event.pageX + ", " + "Y: " + event.pageY);
+            });
+        });
+    </script>
+</head>
+<body>
+    <span>
+        <img src="img/1200px-Tumblr.svg.png" id="tumblr" alt="Tumblr" style="height: 100px">
+        <img src="img/Instagram-Logo.png" id="insta" alt="Instagram" style="height: 100px">
+        <img src="img/Logo_of_Twitter.svg.png" id="twitter" alt="Twitter" style="height: 100px">
+        <img src="img/Netflix.png" id="netflix" alt="Netflix" style="height: 100px">
+        <img src="img/Red-YouTube-logo.png" id="youtube" alt="Youtube" style="height: 100px">
+        <img src="img/reddit-logo.png" id="reddit" alt="Reddit" style="height: 100px">
+    </span>
+    <p id="in">In: </p>
+    <p id="out">Out: </p>
+    <p id="mouse">Mouse X: ,Y: </p>
+    <img src="" id="bigImage" style="width: 400px;" alt="">
+</body>
+</html>
